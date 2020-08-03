@@ -7,6 +7,7 @@ TEST(COLLECT,when_vehicle_sends_measurment_it_is_validated_and_stored_against_ve
     auto fetched_inventory = telematics_to_inventory(test_data);
     
     ASSERT_TRUE(std::isnan(fetched_inventory.motor_temperature));
+    ASSERT_TRUE(std::isnan(fetched_inventory.battery_pc));
     ASSERT_EQUAL(fetched_inventory.battery_temperature,40);
 }
 

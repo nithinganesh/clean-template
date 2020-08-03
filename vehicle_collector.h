@@ -30,7 +30,7 @@ static inventory inventory_data[] =
 
 inventory *fetch_inventory_reference(int vehicle_id)
 {
-    for (auto vehicle_details: inventory_details)
+    for (auto &vehicle_details: inventory_data)
     {
         if(vehicle_details.vehicle_id == vehicle_id)
             return &vehicle_details;
@@ -49,7 +49,7 @@ void update_motor_temperature( inventory *details, float new_value)
 }
 
 void update_battery_pc( inventory *details, float new_value)
-{
+{clTabCtrl
     details->battery_pc = new_value;
 }
 
@@ -68,6 +68,5 @@ inventory telematics_to_inventory(const telematics& received_telematics)
             update_motor_temperature(fetched_inventory_details,received_telematics.value);
             break;
     }
-
     return *fetched_inventory_details;
 }
