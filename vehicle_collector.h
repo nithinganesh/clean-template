@@ -28,7 +28,7 @@ static inventory inventory_data[] =
                      {3,std::numeric_limits<double>::quiet_NaN(),std::numeric_limits<double>::quiet_NaN(),std::numeric_limits<double>::quiet_NaN()}   };
 
 
-inventory *fetch_inventory_reference(int vehicle_id)
+inventory *fetch_inventory_reference(const int vehicle_id)
 {
     for (auto &vehicle_details: inventory_data)
     {
@@ -49,7 +49,7 @@ void update_motor_temperature( inventory *details, float new_value)
 }
 
 void update_battery_pc( inventory *details, float new_value)
-{clTabCtrl
+{
     details->battery_pc = new_value;
 }
 
