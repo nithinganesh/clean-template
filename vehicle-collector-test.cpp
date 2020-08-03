@@ -12,7 +12,7 @@ TEST(COLLECT,when_vehicle_sends_measurment_it_is_validated_and_stored_against_ve
     ASSERT_EQUAL(fetched_inventory.battery_temperature,40);
 
     test_data.type = measurement::battery_pc;
-    test_data.value = 3
+    test_data.value = 3;
     fetched_inventory = telematics_to_inventory(test_data);
 
     ASSERT_TRUE(std::isnan(fetched_inventory.motor_temperature));
@@ -20,7 +20,7 @@ TEST(COLLECT,when_vehicle_sends_measurment_it_is_validated_and_stored_against_ve
     ASSERT_EQUAL(fetched_inventory.battery_temperature,40);
 
     test_data.type = measurement::battery_temperature;
-    test_data.value = 45
+    test_data.value = 45;
     fetched_inventory = telematics_to_inventory(test_data);
     ASSERT_EQUAL(fetched_inventory.battery_temperature,45);
 }
