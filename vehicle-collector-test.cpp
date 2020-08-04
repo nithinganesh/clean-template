@@ -12,6 +12,7 @@ TEST(COLLECT,when_vehicle_sends_measurment_it_is_validated_and_stored_against_ve
     ASSERT_NEAR(fetched_inventory.measurements[measurement::battery_temperature],40,0.001);
 
     test_data={1,measurement::motor_temperature,12.45};
+    fetched_inventory = telematics_to_inventory(test_data);
     ASSERT_NEAR(fetched_inventory.measurements[measurement::motor_temperature],12.45,0.001);
 }
 
